@@ -3,6 +3,7 @@
 require 'bemer'
 require 'simple_form'
 require 'active_support/dependencies/autoload'
+require 'active_support/lazy_load_hooks'
 
 module Bemer
   module SimpleForm
@@ -24,4 +25,9 @@ module Bemer
       end
     end
   end
+end
+
+ActiveSupport.on_load :action_view do
+  ::SimpleForm::FormBuilder.send :prepend, Bemer::SimpleForm::Builder
+  ::SimpleForm::Inputs::Base.send :prepend, Bemer::SimpleForm::Inputs
 end
