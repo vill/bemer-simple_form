@@ -56,13 +56,19 @@ module Bemer
       def extract_bem_options_for!(namespace)
         bem_options = bem_options_for(namespace)
         bem         = bem_options.delete(:bem)
-        bem_cascade = bem_options.delete(:bem_cascade)
+        bem_cascade = extract_bem_cascade!(bem_options)
         css_classes = [bem_options.delete(:cls), bem_options.delete(:class)]
         js          = bem_options.delete(:js)
         mix         = bem_options.delete(:mix)
         mods        = bem_options.delete(:mods)
 
         { bem: bem, js: js, mods: mods, mix: mix, bem_cascade: bem_cascade, cls: css_classes }
+      end
+
+      def extract_bem_cascade!(options)
+        bem_cascade = options.delete(:bem_cascade)
+
+        bem_cascade.nil? ? block_entity.bem_cascade : bem_cascade
       end
     end
   end
