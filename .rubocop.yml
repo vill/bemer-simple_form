@@ -1,4 +1,4 @@
-# inherit_from: .rubocop_todo.yml
+inherit_from: .rubocop_todo.yml
 
 require:
   - rubocop-rspec
@@ -18,3 +18,7 @@ Style/FrozenStringLiteralComment:
 
 Layout/AlignHash:
   EnforcedHashRocketStyle: table
+
+Naming/FileName:
+  Exclude:
+    - 'lib/bemer-simple_form.rb'
