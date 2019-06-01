@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require 'bemer/simple_form/version'
+require 'bemer'
+require 'simple_form'
 
 module Bemer
   module SimpleForm
