@@ -8,6 +8,7 @@ module Bemer
   module SimpleForm
     extend ActiveSupport::Autoload
 
+    autoload :Builder
     autoload :Configuration
 
     class << self
