@@ -10,6 +10,7 @@ module Bemer
 
     autoload :Builder
     autoload :Configuration
+    autoload :Inputs
 
     class << self
       delegate :bemify_suffix_namespaces, :input_type_modifiers_for_suffix_namespaces, to: :config
