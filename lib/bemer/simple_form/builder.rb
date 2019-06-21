@@ -30,8 +30,9 @@ module Bemer
       end
 
       def extract_block_options!(options)
-        @defaults ||= {}
-        options   ||= {}
+        @defaults      ||= {}
+        options        ||= {}
+        options[:html] ||= {}
 
         block = extract_name_for!(:block, lookup_model_names[-1].singularize, options)
 
