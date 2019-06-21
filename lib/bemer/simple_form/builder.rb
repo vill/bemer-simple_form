@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
+require 'active_support/core_ext/string/inflections'
+
 module Bemer
   module SimpleForm
     module Builder
       def initialize(*)
         super
 
-        extract_block_options!(object_name, options)
+        extract_block_options!(options)
       end
 
       def button(type, *args, &block)
@@ -27,11 +29,11 @@ module Bemer
         @defaults.dig(:block_entity)
       end
 
-      def extract_block_options!(object_name, options)
+      def extract_block_options!(options)
         @defaults ||= {}
         options   ||= {}
 
-        block = extract_name_for!(:block, object_name, options)
+        block = extract_name_for!(:block, lookup_model_names[-1].singularize, options)
 
         options.delete(:elem)
 
