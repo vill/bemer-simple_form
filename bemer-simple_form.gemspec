@@ -37,6 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop-performance', '~> 1.3.0'
   spec.add_development_dependency 'rubocop-rspec',       '~> 1.33.0'
 
+  spec.add_runtime_dependency 'activesupport'
   spec.add_runtime_dependency 'bemer',       '>= 0.1.0', '< 1.0'
   spec.add_runtime_dependency 'simple_form', '< 5.0'
 end
