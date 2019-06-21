@@ -2,6 +2,7 @@
 
 require 'bemer'
 require 'simple_form'
+require 'active_support'
 require 'active_support/dependencies/autoload'
 require 'active_support/lazy_load_hooks'
 

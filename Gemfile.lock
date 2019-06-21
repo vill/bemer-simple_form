@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     bemer-simple_form (0.0.0)
+      activesupport
       bemer (>= 0.1.0, < 1.0)
       simple_form (< 5.0)
 
