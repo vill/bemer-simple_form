@@ -33,6 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'fasterer',            '~> 0.5.1'
   spec.add_development_dependency 'overcommit',          '~> 0.48.0'
   spec.add_development_dependency 'rake',                '~> 12.3.0'
+  spec.add_development_dependency 'rspec-rails',         '~> 3.9.0'
   spec.add_development_dependency 'rubocop',             '~> 0.70.0'
   spec.add_development_dependency 'rubocop-performance', '~> 1.3.0'
   spec.add_development_dependency 'rubocop-rspec',       '~> 1.33.0'
