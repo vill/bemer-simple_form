@@ -23,4 +23,5 @@ RSpec.configure do |config|
   end
 
   config.include Bemer::Test::ConfigurationHelpers
+  config.include Bemer::SimpleForm::Test::ConfigurationHelpers
 end
