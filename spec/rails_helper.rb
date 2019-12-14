@@ -21,4 +21,6 @@ RSpec.configure do |config|
   config.define_derived_metadata file_path: %r{/spec/action_view/} do |metadata|
     metadata[:type] = :view
   end
+
+  config.include Bemer::Test::ConfigurationHelpers
 end
