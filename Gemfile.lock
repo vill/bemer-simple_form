@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/vill/bemer.git
+  revision: b1a4cda7e8fe6aae2ad28ca8ad97b61aced220cf
+  ref: b1a4cda7e8fe6aae2ad28ca8ad97b61aced220cf
+  branch: master
+  specs:
+    bemer (0.2.0)
+      railties (>= 3.2.22)
+
 PATH
   remote: .
   specs:
@@ -30,8 +39,6 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     ast (2.4.0)
-    bemer (0.2.0)
-      railties (>= 3.2.22, < 5.3)
     builder (3.2.3)
     bundler-audit (0.6.1)
       bundler (>= 1.2.0, < 3)
@@ -129,6 +136,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bemer (>= 0.1.0, < 1.0)!
   bemer-simple_form!
   bundler (~> 1.16)
   bundler-audit (~> 0.6.1)
