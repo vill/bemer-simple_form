@@ -14,6 +14,10 @@ module Bemer
     autoload :Configuration
     autoload :Inputs
 
+    module Test
+      autoload :ConfigurationHelpers, 'bemer/simple_form/test/configuration_helpers'
+    end
+
     class << self
       delegate :bemify_suffix_namespaces, :input_type_modifiers_for_suffix_namespaces, to: :config
 
