@@ -7,6 +7,7 @@ require_relative 'dummy/config/environment'
 require 'rspec/rails'
 require 'spec_helper'
 require 'fuubar'
+require 'rspec-html-matchers'
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
