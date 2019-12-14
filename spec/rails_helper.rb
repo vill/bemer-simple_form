@@ -26,4 +26,5 @@ RSpec.configure do |config|
   config.include Bemer::Test::ConfigurationHelpers
   config.include Bemer::SimpleForm::Test::ConfigurationHelpers
   config.include RSpecHtmlMatchers
+  config.include Helpers::SimpleForm, type: :view
 end
