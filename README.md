@@ -82,7 +82,7 @@ end
 
 Для `simple_form_for` доступны такие же параметры как и для [хелпера `block_tag`](https://github.com/vill/bemer/blob/master/docs/%D0%A5%D0%B5%D0%BB%D0%BF%D0%B5%D1%80-block_tag.md).
 
-Для элементов формы доступны такие же параметры как и для [хелпера `elem_tag`](https://github.com/vill/bemer/blob/master/docs/%D0%A5%D0%B5%D0%BB%D0%BF%D0%B5%D1%80-elem_tag.md).
+Для элементов формы доступны такие же параметры как и для элементов [хелпера `block_tag`](https://github.com/vill/bemer/blob/master/docs/%D0%A5%D0%B5%D0%BB%D0%BF%D0%B5%D1%80-block_tag.md#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-content) создаваемых с помощью `content`, переданного в виде Ruby `&block`.
 
 Создание формы с параметрами по умолчанию:
 
