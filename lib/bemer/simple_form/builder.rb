@@ -65,7 +65,7 @@ module Bemer
 
         return bem_cascade if block_entity.nil?
 
-        bem_cascade.nil? ? block_entity.bem_cascade : bem_cascade
+        bem_cascade.nil? ? block_entity.instance_variable_get(:@bem_cascade) : bem_cascade
       end
     end
   end
