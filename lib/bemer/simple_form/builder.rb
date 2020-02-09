@@ -34,7 +34,7 @@ module Bemer
         options        ||= {}
         options[:html] ||= {}
 
-        block = extract_name_for!(:block, lookup_model_names[-1].singularize, options)
+        block = extract_name_for!(:block, object_name, options)
 
         options.delete(:elem)
 
