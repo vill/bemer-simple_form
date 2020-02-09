@@ -68,7 +68,7 @@ module Bemer
       def extract_bem_cascade!(options)
         bem_cascade = options.delete(:bem_cascade)
 
-        bem_cascade.nil? ? block_entity.bem_cascade : bem_cascade
+        bem_cascade.nil? ? block_entity.instance_variable_get(:@bem_cascade) : bem_cascade
       end
     end
   end
