@@ -3,7 +3,9 @@
 module Helpers
   module SimpleForm
     def simple_form_for(record, options = {}, &block)
-      view.simple_form_for(record, { url: '', html: { class: '' } }.deep_merge(options), &block)
+      options = { url: '', html: { class: nil } }.deep_merge(options)
+
+      view.simple_form_for(record, options, &(block || proc {}))
     end
   end
 end
