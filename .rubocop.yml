@@ -12,6 +12,8 @@ Metrics/LineLength:
   Max: 100
   IgnoredPatterns:
     - '^\s*#'
+  Exclude:
+    - 'spec/**/*'
 
 Style/FrozenStringLiteralComment:
   EnforcedStyle: always
@@ -22,3 +24,15 @@ Layout/AlignHash:
 Naming/FileName:
   Exclude:
     - 'lib/bemer-simple_form.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/action_view/**/*'
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/action_view/**/*'
