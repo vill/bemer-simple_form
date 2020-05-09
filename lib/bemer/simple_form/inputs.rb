@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'active_support/core_ext/array/wrap'
+require 'active_support/core_ext/object/blank'
+
 module Bemer
   module SimpleForm
     module Inputs
@@ -15,11 +18,13 @@ module Bemer
         @block_entity ||= @options.delete(:block_entity)
       end
 
-      def bemify_input!
+      def bemify_input! # rubocop:disable Metrics/AbcSize
         return unless block_entity
 
+        default_name = options.delete(:elem)
+
         Bemer::SimpleForm.bemify_suffix_namespaces.each do |namespace|
-          elem    = extract_elem_name_for!(namespace)
+          elem    = extract_elem_name_for!(namespace, default_name)
           options = extract_bem_options_for!(namespace)
 
           add_input_type_modifiers!(namespace, options)
@@ -30,15 +35,18 @@ module Bemer
         end
       end
 
-      def extract_elem_name_for!(namespace)
-        bem_options = bem_options_for(namespace)
-        elem        = bem_options.delete(:elem)
+      def extract_elem_name_for!(namespace, default_name) # rubocop:disable Metrics/AbcSize
+        elem = bem_options_for(namespace).delete(:elem)
 
         return elem unless elem.nil?
 
+        elem = default_name.nil? ? reflection_or_attribute_name : default_name
+
+        return elem if Bemer.bem_class(block_entity.block, elem).blank?
+
         suffix = namespace.to_s.chomp('_html') unless namespace.eql?(:input_html)
 
-        [reflection_or_attribute_name, suffix].compact.join('_').to_sym
+        [elem, suffix].compact.join('_').to_sym
       end
 
       def add_input_type_modifiers!(namespace, options)
