@@ -26,3 +26,13 @@ gemfile:
   - gemfiles/simple_form_4.0.x_bemer_0.3.x.gemfile
   - gemfiles/simple_form_4.1.x_bemer_0.3.x.gemfile
   - gemfiles/simple_form_5.0.x_bemer_0.3.x.gemfile
+
+matrix:
+  exclude:
+    ###########################################################
+    # Ruby 2.7.0
+    ###########################################################
+
+    # Simple Form 3.1.x
+    - rvm: 2.7.0
+      gemfile: gemfiles/simple_form_3.1.x_bemer_0.3.x.gemfile
