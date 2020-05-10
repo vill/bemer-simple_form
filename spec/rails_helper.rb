@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'spec_helper'
 require 'fuubar'
 require 'rspec-html-matchers'
+require 'active_support/core_ext/string/inflections'
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
