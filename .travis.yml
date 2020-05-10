@@ -1,0 +1,38 @@
+langauge: ruby
+
+sudo: false
+
+cache: bundler
+
+notifications:
+  email: false
+
+env:
+  - CI='true'
+
+rvm:
+  - 2.3.8
+  - 2.4.9
+  - 2.5.7
+  - 2.6.5
+  - 2.7.0
+
+gemfile:
+  - gemfiles/simple_form_3.1.x_bemer_0.3.x.gemfile
+  - gemfiles/simple_form_3.2.x_bemer_0.3.x.gemfile
+  - gemfiles/simple_form_3.3.x_bemer_0.3.x.gemfile
+  - gemfiles/simple_form_3.4.x_bemer_0.3.x.gemfile
+  - gemfiles/simple_form_3.5.x_bemer_0.3.x.gemfile
+  - gemfiles/simple_form_4.0.x_bemer_0.3.x.gemfile
+  - gemfiles/simple_form_4.1.x_bemer_0.3.x.gemfile
+  - gemfiles/simple_form_5.0.x_bemer_0.3.x.gemfile
+
+matrix:
+  exclude:
+    ###########################################################
+    # Ruby 2.7.0
+    ###########################################################
+
+    # Simple Form 3.1.x
+    - rvm: 2.7.0
+      gemfile: gemfiles/simple_form_3.1.x_bemer_0.3.x.gemfile
