@@ -11,4 +11,5 @@ gem 'bemer', '>= 0.1.0', '< 1.0', git: 'https://github.com/vill/bemer.git', bran
 unless ENV['CI'] || ENV['APPRAISAL']
   gem 'activesupport', '~> 6.0.3'
   gem 'bundler',       '~> 1.16'
+  gem 'overcommit',    '~> 0.48.0'
 end
