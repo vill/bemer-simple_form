@@ -39,6 +39,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_development_dependency 'rubocop',             '~> 0.70.0'
   spec.add_development_dependency 'rubocop-performance', '~> 1.3.0'
   spec.add_development_dependency 'rubocop-rspec',       '~> 1.33.0'
+  spec.add_development_dependency 'wwtd',                '~> 1.4.1'
 
   spec.add_runtime_dependency 'activesupport'
   spec.add_runtime_dependency 'bemer', '>= 0.1.0', '< 1.0'
