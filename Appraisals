@@ -8,7 +8,7 @@ SUPPORTED_SIMPLE_FORM_VERSIONS = %w[0.4.0 0.5.0 1.0.0 1.1.0 1.2.0 1.3.0 1.4.0 1.
 
 SUPPORTED_SIMPLE_FORM_VERSIONS.each do |simple_form_version|
   SUPPORTED_BEMER_VERSIONS.each do |bemer_version|
-    name = "simple_form-#{simple_form_version[0..2]}.x_bemer-#{bemer_version[0..2]}.x"
+    name = "simple_form_#{simple_form_version[0..2]}.x_bemer_#{bemer_version[0..2]}.x"
 
     appraise name do
       gem 'bemer',       "~> #{bemer_version}"
