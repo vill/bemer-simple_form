@@ -19,7 +19,8 @@ module Bemer
     end
 
     class << self
-      delegate :bemify_suffix_namespaces, :input_type_modifiers_for_suffix_namespaces, to: :config
+      delegate :bemify_suffix_namespaces, :input_type_modifiers_for_suffix_namespaces,
+               :element_name_transformer, to: :config
 
       def config
         Bemer::SimpleForm::Configuration.instance

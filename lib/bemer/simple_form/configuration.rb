@@ -8,10 +8,12 @@ module Bemer
     class Configuration
       include Singleton
 
-      attr_accessor :bemify_namespaces, :input_type_modifiers_for_namespaces
+      attr_accessor :bemify_namespaces, :input_type_modifiers_for_namespaces,
+                    :element_name_transformer
 
       def initialize
         @bemify_namespaces                   = %i[error hint input wrapper label]
+        @element_name_transformer            = nil
         @input_type_modifiers_for_namespaces = %i[input wrapper label]
       end
 
