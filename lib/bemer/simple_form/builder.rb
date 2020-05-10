@@ -14,6 +14,7 @@ module Bemer
       def button(type, *args, &block)
         options = args.extract_options!
         elem    = extract_name_for!(:elem, type, options)
+        elem    = Bemer::SimpleForm.transform_element_name(nil, block_entity.block, elem, elem)
         entity  = Bemer::EntityBuilder.new(block_entity.block, elem, extract_bem_options!(options))
 
         options.delete(:block)
