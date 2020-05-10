@@ -35,19 +35,23 @@ module Bemer
         end
       end
 
+      # rubocop:disable Metrics/LineLength
       def extract_elem_name_for!(namespace, default_name) # rubocop:disable Metrics/AbcSize
         elem = bem_options_for(namespace).delete(:elem)
 
-        return elem unless elem.nil?
+        return Bemer::SimpleForm.transform_element_name(namespace, block_entity.block, elem, elem) unless elem.nil?
 
         elem = default_name.nil? ? reflection_or_attribute_name : default_name
 
-        return elem if Bemer.bem_class(block_entity.block, elem).blank?
+        return Bemer::SimpleForm.transform_element_name(namespace, block_entity.block, elem, elem) if Bemer.bem_class(block_entity.block, elem).blank?
 
         suffix = namespace.to_s.chomp('_html') unless namespace.eql?(:input_html)
 
-        [elem, suffix].compact.join('_').to_sym
+        namespaced_elem = [elem, suffix].compact.join('_').to_sym
+
+        Bemer::SimpleForm.transform_element_name(namespace, block_entity.block, namespaced_elem, elem)
       end
+      # rubocop:enable Metrics/LineLength
 
       def add_input_type_modifiers!(namespace, options)
         return if Bemer::SimpleForm.input_type_modifiers_for_suffix_namespaces.exclude?(namespace)

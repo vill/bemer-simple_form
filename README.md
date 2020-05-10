@@ -19,6 +19,7 @@ gem 'bemer-simple_form'
 # config/initializers/bemer_simple_form.rb
 Bemer::SimpleForm.setup do |config|
   config.bemify_namespaces                   = %i[error hint input wrapper label]
+  config.element_name_transformer            = nil # lambda {  |namespace, block, namespaced_elem, initial_elem| ... }
   config.input_type_modifiers_for_namespaces = %i[input wrapper label]
 end
 ```

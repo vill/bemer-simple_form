@@ -19,7 +19,8 @@ module Bemer
     end
 
     class << self
-      delegate :bemify_suffix_namespaces, :input_type_modifiers_for_suffix_namespaces, to: :config
+      delegate :bemify_suffix_namespaces, :input_type_modifiers_for_suffix_namespaces,
+               :element_name_transformer, to: :config
 
       def config
         Bemer::SimpleForm::Configuration.instance
@@ -27,6 +28,14 @@ module Bemer
 
       def setup
         yield config
+      end
+
+      def transform_element_name(namespace, block, namespaced_elem, initial_elem)
+        return namespaced_elem unless element_name_transformer.respond_to?(:call)
+
+        namespace = namespace.to_s.chomp('_html').to_sym unless namespace.nil?
+
+        element_name_transformer.call(namespace, block, namespaced_elem, initial_elem)
       end
     end
   end
