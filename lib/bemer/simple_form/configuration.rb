@@ -18,11 +18,11 @@ module Bemer
       end
 
       def bemify_suffix_namespaces
-        Array.wrap(bemify_namespaces).uniq.map { |n| add_sufix(n) }
+        @bemify_suffix_namespaces ||= Array.wrap(bemify_namespaces).uniq.map { |n| add_sufix(n) }
       end
 
       def input_type_modifiers_for_suffix_namespaces
-        Array.wrap(input_type_modifiers_for_namespaces).uniq.map { |n| add_sufix(n) }
+        @input_type_modifiers_for_suffix_namespaces ||= Array.wrap(input_type_modifiers_for_namespaces).uniq.map { |n| add_sufix(n) } # rubocop:disable Metrics/LineLength
       end
 
       protected
