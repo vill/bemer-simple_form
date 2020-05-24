@@ -150,5 +150,43 @@ RSpec.describe 'simple_form_for helper' do
         with_tag :input, with: { class: 'form__submit-button' }, count: 1
       end
     end
+
+    it do
+      form = simple_form_for :form do |f|
+        f.input :user_ids, elem: :user_ids
+      end
+
+      expect(form).to have_tag(:form, with: { class: 'form' }, count: 1) do
+        with_tag :div, with: { class: 'form__user-ids-wrapper' }, count: 1
+        with_tag :label, with: { class: 'form__user-ids-label' }, count: 1
+        with_tag :input, with: { class: 'form__user-ids' }, count: 1
+      end
+    end
+
+    it do
+      form = simple_form_for :form do |f|
+        f.input :user_ids, input_html: { elem: :user_ids }
+      end
+
+      expect(form).to have_tag(:form, with: { class: 'form' }, count: 1) do
+        with_tag :div, with: { class: 'form__users-wrapper' }, count: 1
+        with_tag :label, with: { class: 'form__users-label' }, count: 1
+        with_tag :input, with: { class: 'form__user-ids' }, count: 1
+      end
+    end
+
+    ['', false].each do |elem|
+      it do
+        form = simple_form_for :form do |f|
+          f.input :user_ids, elem: elem
+        end
+
+        expect(form).to have_tag(:form, with: { class: 'form' }, count: 1) do
+          without_tag 'div[class]'
+          without_tag 'label[class]'
+          without_tag 'input[class]'
+        end
+      end
+    end
   end
 end
