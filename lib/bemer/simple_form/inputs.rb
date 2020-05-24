@@ -39,17 +39,17 @@ module Bemer
       def extract_elem_name_for!(namespace, default_name) # rubocop:disable Metrics/AbcSize
         elem = bem_options_for(namespace).delete(:elem)
 
-        return Bemer::SimpleForm.transform_element_name(namespace, block_entity.block, elem, elem) unless elem.nil?
+        return elem unless elem.nil?
 
         elem = default_name.nil? ? reflection_or_attribute_name : default_name
 
-        return Bemer::SimpleForm.transform_element_name(namespace, block_entity.block, elem, elem) if Bemer.bem_class(block_entity.block, elem).blank?
+        return elem if Bemer.bem_class(block_entity.block, elem).blank?
 
         suffix = namespace.to_s.chomp('_html') unless namespace.eql?(:input_html)
 
         namespaced_elem = [elem, suffix].compact.join('_').to_sym
 
-        Bemer::SimpleForm.transform_element_name(namespace, block_entity.block, namespaced_elem, elem)
+        default_name.nil? ? Bemer::SimpleForm.transform_element_name(namespace, block_entity.block, namespaced_elem, elem) : namespaced_elem
       end
       # rubocop:enable Metrics/LineLength
 
