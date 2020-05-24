@@ -38,6 +38,38 @@ gemfile:
 matrix:
   exclude:
     ###########################################################
+    # Ruby 2.3.8
+    ###########################################################
+
+    # Simple Form 4.0.x
+    - rvm: 2.3.8
+      gemfile: gemfiles/simple_form_4.0.x_bemer_0.4.x.gemfile
+
+    # Simple Form 4.1.x
+    - rvm: 2.3.8
+      gemfile: gemfiles/simple_form_4.1.x_bemer_0.4.x.gemfile
+
+    # Simple Form 5.0.x
+    - rvm: 2.3.8
+      gemfile: gemfiles/simple_form_5.0.x_bemer_0.4.x.gemfile
+
+    ###########################################################
+    # Ruby 2.4.9
+    ###########################################################
+
+    # Simple Form 4.0.x
+    - rvm: 2.4.9
+      gemfile: gemfiles/simple_form_4.0.x_bemer_0.4.x.gemfile
+
+    # Simple Form 4.1.x
+    - rvm: 2.4.9
+      gemfile: gemfiles/simple_form_4.1.x_bemer_0.4.x.gemfile
+
+    # Simple Form 5.0.x
+    - rvm: 2.4.9
+      gemfile: gemfiles/simple_form_5.0.x_bemer_0.4.x.gemfile
+
+    ###########################################################
     # Ruby 2.7.0
     ###########################################################
 
