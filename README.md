@@ -2,6 +2,8 @@
 
 Using conventions from the `BEM` methodology in `SimpleForm` forms.
 
+*Please refer to the [README.ru.md](README.ru.md) file for instructions in Russian.*
+
 ## Installation
 
 Add it to your Gemfile:
