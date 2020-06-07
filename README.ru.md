@@ -1,22 +1,20 @@
-# Bemer Simple Form
+# Использование соглашений из БЭМ методологии в формах Simple Form
 
-Using conventions from the `BEM` methodology in `SimpleForm` forms.
+## Установка
 
-## Installation
-
-Add it to your Gemfile:
+Добавить в `Gemfile`:
 
 ```ruby
 gem 'bemer-simple_form'
 ```
 
-Run the following command to install it:
+Выполнить в терминале команду:
 
     $ bundle
 
-## Configuration
-### `bemer-simple_form` configuration
-Default configuration:
+## Настройки
+### Конфигурация `bemer-simple_form`
+Параметры конфигурации по умолчанию:
 ```ruby
 # config/initializers/bemer_simple_form.rb
 Bemer::SimpleForm.setup do |config|
@@ -26,8 +24,8 @@ Bemer::SimpleForm.setup do |config|
 end
 ```
 
-### `bemer` configuration
-The default configuration is available [here](https://github.com/vill/bemer/blob/master/docs/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F.md).
+### Конфигурация `bemer`
+Все параметры конфигурации использующие по умолчанию досутпны [здесь](https://github.com/vill/bemer/blob/master/docs/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F.md).
 ```ruby
 # config/initializers/bemer.rb
 Bemer.setup do |config|
@@ -38,9 +36,8 @@ Bemer.setup do |config|
 end
 ```
 
-### `simple_form` configuration
-
-To disable the creation of unnecessary `CSS` classes from `SimpleForm`, just change the following configuration parameters:
+### Конфигурация `simple_form`
+Для того, чтобы отключить генерацию ненужных CSS классов от Simple Form, достаточно изменить следующие параметры конфигурации:
 ```ruby
 # config/initializers/simple_form.rb
 SimpleForm.setup do |config|
@@ -77,19 +74,18 @@ SimpleForm.setup do |config|
   # ...
 end
 ```
-
-Additionally, you can specify `class: nil`:
+Дополнительно при вызове можно указать `class: nil`:
 ```slim
 = simple_form_for resource, url: registration_path(resource_name), html: { class: nil } do |f|
   / ...
 ```
-## Usage
+## Использование
 
-For `simple_form_for`, the same parameters are available as for [the `block_tag` helper](https://github.com/vill/bemer/blob/master/docs/%D0%A5%D0%B5%D0%BB%D0%BF%D0%B5%D1%80-block_tag.md).
+Для `simple_form_for` доступны такие же параметры как и для [хелпера `block_tag`](https://github.com/vill/bemer/blob/master/docs/%D0%A5%D0%B5%D0%BB%D0%BF%D0%B5%D1%80-block_tag.md).
 
-The same parameters are available for form elements as for [`block_tag` helper](https://github.com/vill/bemer/blob/master/docs/%D0%A5%D0%B5%D0%BB%D0%BF%D0%B5%D1%80-block_tag.md#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-content) elements created using `content` passed as Ruby `&block`.
+Для элементов формы доступны такие же параметры как и для элементов [хелпера `block_tag`](https://github.com/vill/bemer/blob/master/docs/%D0%A5%D0%B5%D0%BB%D0%BF%D0%B5%D1%80-block_tag.md#%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80-content) создаваемых с помощью `content`, переданного в виде Ruby `&block`.
 
-Creating a form with default parameters:
+Создание формы с параметрами по умолчанию:
 
 ```slim
 = simple_form_for resource, url: registration_path(resource_name), html: { class: nil } do |f|
@@ -99,7 +95,7 @@ Creating a form with default parameters:
   => f.button :submit, t('.sign_up')
 ```
 
-The name of the block is passed through the `as` parameter:
+Название блока передается через параметр `as`:
 ```slim
 = simple_form_for resource, as: :user, url: registration_path(resource_name), html: { class: nil } do |f|
   = f.input :email, required: true, autofocus: true
@@ -108,7 +104,7 @@ The name of the block is passed through the `as` parameter:
   = f.button :submit, t('.sign_up')
 ```
 
-The name of the block is passed through the `block` parameter:
+Название блока передается через параметр `block`:
 ```slim
 = simple_form_for resource, block: :user, url: registration_path(resource_name), html: { class: nil } do |f|
   = f.input :email, required: true, autofocus: true
@@ -117,7 +113,7 @@ The name of the block is passed through the `block` parameter:
   = f.button :submit, t('.sign_up')
 ```
 
-Add the `enabled` modifier to the `email` element:
+Добавить модификатор `enabled` в элемент `email`:
 ```slim
 = simple_form_for resource, block: :user, url: registration_path(resource_name), html: { class: nil } do |f|
   = f.input :email, required: true, autofocus: true, input_html: { mods: :enabled }
@@ -126,7 +122,7 @@ Add the `enabled` modifier to the `email` element:
   = f.button :submit, t('.sign_up')
 ```
 
-The result of rendering a form with default parameters:
+Результат рендеринга формы с параметрами по умолчанию:
 ```html
 <form id="new_admin_user" novalidate="novalidate" class="admin-user" action="/user" accept-charset="UTF-8" method="post">
   <input type="hidden" name="authenticity_token" value="dXgQo5PvtM5g01pFiQmpMDTb8BYVxsMvzS8n+6YN/UhjFR/tCf4ym7bZzMgs/E/ECxvXZcbr9uzMPcUUIj43jA==">
@@ -154,7 +150,7 @@ The result of rendering a form with default parameters:
   <input type="submit" name="commit" value="Зарегистрироваться" class="admin-user__submit" data-disable-with="Зарегистрироваться">
 </form>
 ```
-The result of rendering a form containing validation errors:
+Результат рендеринга формы содержащей ошибки валидации:
 ```html
 <form novalidate="novalidate" class="admin-user" action="/user" accept-charset="UTF-8" method="post">
   <input type="hidden" name="authenticity_token" value="5GJ9rIPD1XVg8BDKy2ZBpDt3qYlBuAh/z7u00qw8bzfyD3LiGdJTILb6hkduk6dQBLeO+pKVPbzOqVY9KA+l8w==">
@@ -184,12 +180,12 @@ The result of rendering a form containing validation errors:
   <input type="submit" name="commit" value="Зарегистрироваться" class="admin-user__submit" data-disable-with="Зарегистрироваться">
 </form>
 ```
-## Links
+## Ссылки
 
-1. BEM methodology - https://en.bem.info/methodology
-1. Minimal stack for coding client-side JavaScript and templating - https://github.com/bem/bem-core
-1. Declarative template engine for the browser and server with regular JS syntax - https://github.com/bem/bem-xjst
+1. https://ru.bem.info/methodology/
+1. https://github.com/bem/bem-xjst
+1. https://github.com/bem/bem-core
 
-## License
+## Лицензия
 
-Copyright (c) 2019-2020 Alexander Grigorev. See [LICENSE.txt](LICENSE.txt) for further details.
+Copyright (c) 2019 - 2020 Александр Григорьев. Более подробную информацию о лицензии можно получить в файле [LICENSE-RU.txt](LICENSE-RU.txt).
