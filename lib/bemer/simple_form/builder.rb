@@ -15,7 +15,7 @@ module Bemer
         options = args.extract_options!
         elem    = extract_name_for!(:elem, type, options)
         elem    = Bemer::SimpleForm.transform_element_name(nil, block_entity.block, elem, elem)
-        entity  = Bemer::EntityBuilder.new(block_entity.block, elem, extract_bem_options!(options))
+        entity  = Bemer::EntityBuilder.new(block_entity.block, elem, **extract_bem_options!(options))
 
         options.delete(:block)
 
@@ -39,7 +39,7 @@ module Bemer
 
         options.delete(:elem)
 
-        @defaults[:block_entity] = Bemer::EntityBuilder.new(block, extract_bem_options!(options))
+        @defaults[:block_entity] = Bemer::EntityBuilder.new(block, **extract_bem_options!(options))
 
         options[:html].merge!(block_entity.attrs)
       end

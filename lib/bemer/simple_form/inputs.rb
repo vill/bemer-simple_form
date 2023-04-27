@@ -29,7 +29,7 @@ module Bemer
 
           add_input_type_modifiers!(namespace, options)
 
-          elem_entity = ::Bemer::EntityBuilder.new(block_entity.block, elem, options)
+          elem_entity = ::Bemer::EntityBuilder.new(block_entity.block, elem, **options)
 
           bem_options_for(namespace).merge!(elem_entity.attrs).delete(:block)
         end
