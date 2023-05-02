@@ -30,7 +30,7 @@ before_script:
   - rm Gemfile.lock
   - gem update --system 3.3.26
   - bundle config --local path vendor/bundle
-  - 'CI=true bundle install --jobs $(nproc) "${FLAGS[@]}"'
+  - 'CI=true bundle install --quiet --jobs $(nproc) "${FLAGS[@]}"'
 
 ruby-2.3.8:
   image: ruby:2.3.8
