@@ -71,14 +71,26 @@ matrix:
     # Simple Form 4.0.x
     - rvm: 2.3.8
       gemfile: gemfiles/simple_form_4.0.x_bemer_0.4.x.gemfile
+    - rvm: 2.3.8
+      gemfile: gemfiles/simple_form_4.0.x_bemer_0.5.x.gemfile
+    - rvm: 2.3.8
+      gemfile: gemfiles/simple_form_4.0.x_bemer_0.6.x.gemfile
 
     # Simple Form 4.1.x
     - rvm: 2.3.8
       gemfile: gemfiles/simple_form_4.1.x_bemer_0.4.x.gemfile
+    - rvm: 2.3.8
+      gemfile: gemfiles/simple_form_4.1.x_bemer_0.5.x.gemfile
+    - rvm: 2.3.8
+      gemfile: gemfiles/simple_form_4.1.x_bemer_0.6.x.gemfile
 
     # Simple Form 5.0.x
     - rvm: 2.3.8
       gemfile: gemfiles/simple_form_5.0.x_bemer_0.4.x.gemfile
+    - rvm: 2.3.8
+      gemfile: gemfiles/simple_form_5.0.x_bemer_0.5.x.gemfile
+    - rvm: 2.3.8
+      gemfile: gemfiles/simple_form_5.0.x_bemer_0.6.x.gemfile
 
     ###########################################################
     # Ruby 2.4.10
@@ -87,14 +99,26 @@ matrix:
     # Simple Form 4.0.x
     - rvm: 2.4.10
       gemfile: gemfiles/simple_form_4.0.x_bemer_0.4.x.gemfile
+    - rvm: 2.4.10
+      gemfile: gemfiles/simple_form_4.0.x_bemer_0.5.x.gemfile
+    - rvm: 2.4.10
+      gemfile: gemfiles/simple_form_4.0.x_bemer_0.6.x.gemfile
 
     # Simple Form 4.1.x
     - rvm: 2.4.10
       gemfile: gemfiles/simple_form_4.1.x_bemer_0.4.x.gemfile
+    - rvm: 2.4.10
+      gemfile: gemfiles/simple_form_4.1.x_bemer_0.5.x.gemfile
+    - rvm: 2.4.10
+      gemfile: gemfiles/simple_form_4.1.x_bemer_0.6.x.gemfile
 
     # Simple Form 5.0.x
     - rvm: 2.4.10
       gemfile: gemfiles/simple_form_5.0.x_bemer_0.4.x.gemfile
+    - rvm: 2.4.10
+      gemfile: gemfiles/simple_form_5.0.x_bemer_0.5.x.gemfile
+    - rvm: 2.4.10
+      gemfile: gemfiles/simple_form_5.0.x_bemer_0.6.x.gemfile
 
     # Simple Form 5.1.x
     - rvm: 2.4.10
