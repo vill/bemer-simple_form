@@ -12,10 +12,13 @@ env:
 
 rvm:
   - 2.3.8
-  - 2.4.9
-  - 2.5.7
-  - 2.6.5
-  - 2.7.0
+  - 2.4.10
+  - 2.5.9
+  - 2.6.10
+  - 2.7.8
+  - 3.0.6
+  - 3.1.4
+  - 3.2.2
 
 gemfile:
   - gemfiles/simple_form_3.1.x_bemer_0.3.x.gemfile
@@ -54,27 +57,27 @@ matrix:
       gemfile: gemfiles/simple_form_5.0.x_bemer_0.4.x.gemfile
 
     ###########################################################
-    # Ruby 2.4.9
+    # Ruby 2.4.10
     ###########################################################
 
     # Simple Form 4.0.x
-    - rvm: 2.4.9
+    - rvm: 2.4.10
       gemfile: gemfiles/simple_form_4.0.x_bemer_0.4.x.gemfile
 
     # Simple Form 4.1.x
-    - rvm: 2.4.9
+    - rvm: 2.4.10
       gemfile: gemfiles/simple_form_4.1.x_bemer_0.4.x.gemfile
 
     # Simple Form 5.0.x
-    - rvm: 2.4.9
+    - rvm: 2.4.10
       gemfile: gemfiles/simple_form_5.0.x_bemer_0.4.x.gemfile
 
     ###########################################################
-    # Ruby 2.7.0
+    # Ruby 2.7.8
     ###########################################################
 
     # Simple Form 3.1.x
-    - rvm: 2.7.0
+    - rvm: 2.7.8
       gemfile: gemfiles/simple_form_3.1.x_bemer_0.3.x.gemfile
-    - rvm: 2.7.0
+    - rvm: 2.7.8
       gemfile: gemfiles/simple_form_3.1.x_bemer_0.4.x.gemfile
