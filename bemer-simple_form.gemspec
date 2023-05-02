@@ -6,7 +6,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'bemer/simple_form/version'
 
-Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
+Gem::Specification.new do |spec|
   spec.name             = 'bemer-simple_form'
   spec.version          = Bemer::SimpleForm::VERSION
   spec.author           = 'Alexander Grigorev'
@@ -27,18 +27,6 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
 
   spec.required_ruby_version     = '>= 2.3.0'
   spec.required_rubygems_version = '>= 2.2.0'
-
-  spec.add_development_dependency 'appraisal',           '~> 2.2.0'
-  spec.add_development_dependency 'bundler-audit',       '~> 0.6.1'
-  spec.add_development_dependency 'fasterer',            '~> 0.5.1'
-  spec.add_development_dependency 'fuubar',              '~> 2.5.0'
-  spec.add_development_dependency 'rake',                '~> 12.3.0'
-  spec.add_development_dependency 'rspec-html-matchers', '~> 0.9.2'
-  spec.add_development_dependency 'rspec-rails',         '~> 3.9.0'
-  spec.add_development_dependency 'rubocop',             '~> 0.70.0'
-  spec.add_development_dependency 'rubocop-performance', '~> 1.3.0'
-  spec.add_development_dependency 'rubocop-rspec',       '~> 1.33.0'
-  spec.add_development_dependency 'wwtd',                '~> 1.4.1'
 
   spec.add_runtime_dependency 'activesupport'
   spec.add_runtime_dependency 'bemer', '>= 0.1.0', '< 1.0'
